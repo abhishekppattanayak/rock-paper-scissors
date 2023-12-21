@@ -20,6 +20,9 @@
 .flex-col {
     flex-direction: column;
 }
+.flex-col-rev {
+    flex-direction: column-reverse;
+}
 .content-center {
     justify-content: center;
 }
@@ -31,6 +34,9 @@
 }
 .flex-1 {
     flex-grow: 1;
+}
+.flex-2 {
+    flex-grow: 2;
 }
 .items-stretch {
     align-items: stretch;
@@ -50,8 +56,37 @@
 .white {
     color: white;
 }
+.px-12 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.py-4 {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.player {
+    border: 4px solid rgb(92, 92, 249);
+    border-radius: 25%;
+}
+.computer {
+    border: 4px solid rgb(249, 92, 92);
+    border-radius: 25%;
+}
+.neutral {
+    border: 4px solid gray;
+    border-radius: 25%;
+}
+.gap-20 {
+    gap: 20px;
+}
+.card {
+    width: 10vw;
+    min-width: 100px;
+    aspect-ratio: 1;
+}
+
 /* animation css */
-@keyframes main {
+/* @keyframes main {
     from {
         width: 100svw;
         height: 100svh;
@@ -61,10 +96,10 @@
         width: 100svw;
         height: 0;    
     }
-}
+} */
 
 /* specific css */
-header {
+/* header {
     position: relative;
     z-index: 1;
     width: 100vw;
@@ -75,6 +110,16 @@ header {
     animation: main 2s cubic-bezier(0.11, 0.62, 0, 1);
     animation-delay: 2.4s;
     animation-fill-mode: forwards;
+} */
+header {
+    display: none;
+}
+main {
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
 }
 #footer {
     position: absolute;

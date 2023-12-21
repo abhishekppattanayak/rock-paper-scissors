@@ -11,20 +11,23 @@
         <div class="self-center">ROCK PAPER SCISSORS</div>
         <div class="self-center font-20">by malginisus</div>
     </header>
-    <main class="h-92 flex items-stretch h-100">
-        <div class="flex-1 flex flex-col">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+    <main id="main" class="h-92 flex items-stretch h-100">
+        <div id="left" class="flex-1 flex flex-col content-center items-center gap-20"> 
+            <div class="card player"></div>
+            <div class="card player"></div>
+            <div class="card player"></div>
         </div>
-        <div class="flex-1">
-            <div></div>
-            <button></button>
+        <div class="flex flex-col content-center items-center flex-2 gap-20">
+            <div class="flex gap-20">
+                <div class="card neutral"></div>
+                <div class="card neutral"></div>
+            </div>
+            <button class="px-12 py-4 font-10">Shoot!</button>
         </div>
-        <div class="flex-1 flex flex-col">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+        <div id="right" class="flex-1 flex flex-col content-center items-center gap-20">
+            <div class="card computer"></div>
+            <div class="card computer"></div>
+            <div class="card computer"></div>
         </div>
     </main>
     <footer class="h-8 flex content-center items-center bg-gray white font-15" id="footer"></footer>
