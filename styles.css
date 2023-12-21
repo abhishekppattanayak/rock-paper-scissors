@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik Doodle Shadow', monospace;
+}
+
+/* utility classes css */
+.h-92 {
+    height: 92vh;
+}
+.h-8 {
+    height: 8vh;
+}
+.flex {
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+.content-center {
+    justify-content: center;
+}
+.items-center {
+    align-items: center;
+}
+.self-center {
+    align-self: center;
+}
+.flex-1 {
+    flex-grow: 1;
+}
+.items-stretch {
+    align-items: stretch;
+}
+.font-20 {
+    font-size: 3.2vw;
+}
+.font-15 {
+    font-size: 2.4vw;
+}
+.font-10 {
+    font-size: 1.6vw;
+}
+.bg-gray {
+    background-color: #333;
+}
+.white {
+    color: white;
+}
+/* animation css */
+@keyframes main {
+    from {
+        width: 100svw;
+        height: 100svh;
+    }
+    to {
+        color: transparent;
+        width: 100svw;
+        height: 0;    
+    }
+}
+
+/* specific css */
+header {
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    color: gold;
+    font-size: 6.4vw;
+    background-color: #441a33;
+    animation: main 2s cubic-bezier(0.11, 0.62, 0, 1);
+    animation-delay: 2.4s;
+    animation-fill-mode: forwards;
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
