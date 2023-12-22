@@ -1,4 +1,5 @@
 document.querySelector('footer').textContent = `© ${new Date().getFullYear()} malginisus`;
+const p = document.getElementById('result');
 function replaceClass() {
     let main = document.getElementById('main');
     let left = document.getElementById('left');
@@ -16,3 +17,51 @@ function replaceClass() {
 }
 window.addEventListener('resize', replaceClass);
 replaceClass();
+
+let findWinner = () => {
+    let val = document.querySelector('input[name="choice"]:checked');
+    if(val) {
+        val = val.value;
+        let comp = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
+
+        let img = document.createElement('img');
+        let img2 = document.createElement('img');
+
+        img2.src = `./images/${val}.png`;
+        img2.width = '50%';
+        img.src = `./images/${comp}.png`;
+        img.width = '50%';
+
+        document.getElementById('one').innerHTML = '';
+        document.getElementById('one').appendChild(img2);
+        
+        document.getElementById('two').innerHTML = '';
+        document.getElementById('two').appendChild(img);
+
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+
+        if(val===comp){
+            p.textContent = "It's a tie!";
+            one.classList.add('neutral');
+            one.classList.remove('winner');
+            two.classList.remove('winner');
+            two.classList.add('neutral');
+        }
+        else if((val==='rock' && comp==='scissors') || (val==='paper' && comp==='rock') || (val==='scissors' && comp==='paper')){
+            p.textContent = "You win!";
+            one.classList.add('winner');
+            one.classList.remove('neutral');
+            two.classList.remove('winner');
+            two.classList.add('neutral');
+        }
+        else {
+            p.textContent = "You lose!";
+            two.classList.add('winner');
+            two.classList.remove('neutral');
+            one.classList.add('neutral');
+            one.classList.remove('winner');
+        }
+    }
+}
+

@@ -56,6 +56,9 @@
 .white {
     color: white;
 }
+.black {
+    color: black;
+}
 .px-12 {
     padding-left: 12px;
     padding-right: 12px;
@@ -76,6 +79,11 @@
     border: 4px solid gray;
     border-radius: 25%;
 }
+.winner {
+    border: 4px solid rgb(92, 249, 92);
+    border-radius: 25%;
+    background-color: rgba(92, 249, 92, 10%);
+}
 .gap-20 {
     gap: 20px;
 }
@@ -86,7 +94,7 @@
 }
 
 /* animation css */
-/* @keyframes main {
+@keyframes main {
     from {
         width: 100svw;
         height: 100svh;
@@ -94,23 +102,24 @@
     to {
         color: transparent;
         width: 100svw;
-        height: 0;    
+        height: 0;  
+        z-index: -2;
     }
-} */
+}
 
 /* specific css */
-/* header {
+header {
     position: relative;
     z-index: 1;
     width: 100vw;
     height: 100vh;
     color: gold;
     font-size: 6.4vw;
-    background-color: #441a33;
+    background-color:  #441a33;;
     animation: main 2s cubic-bezier(0.11, 0.62, 0, 1);
     animation-delay: 2.4s;
     animation-fill-mode: forwards;
-} */
+}
 header {
     display: none;
 }
@@ -127,4 +136,13 @@ main {
     left: 0;
     width: 100%;
     z-index: -1;
+}
+img {
+    width: 50%;
+}
+input[type="radio"]{
+    display: none;
+}
+input[type="radio"]:checked+label {
+    background-color: rgba(92, 92, 249, 10%);
 }

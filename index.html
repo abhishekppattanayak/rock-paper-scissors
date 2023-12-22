@@ -8,26 +8,27 @@
 </head>
 <body class="flex flex-col">
     <header class="flex flex-col content-center">
-        <div class="self-center">ROCK PAPER SCISSORS</div>
+        <div class="self-center">ROCK &nbsp;&nbsp;PAPER &nbsp;&nbsp;SCISSORS</div>
         <div class="self-center font-20">by malginisus</div>
     </header>
     <main id="main" class="h-92 flex items-stretch h-100">
         <div id="left" class="flex-1 flex flex-col content-center items-center gap-20"> 
-            <div class="card player"></div>
-            <div class="card player"></div>
-            <div class="card player"></div>
+            <input type="radio" name="choice" id="rock" value="rock"><label class="card player flex content-center items-center" for="rock"><img src="./images/rock.png" alt=""></label>
+            <input type="radio" name="choice" id="paper" value="paper"><label class="card player flex content-center items-center" for="paper"><img src="./images/paper.png" alt=""></label>
+            <input type="radio" name="choice" id="scissors" value="scissors"><label class="card player flex content-center items-center" for="scissors"><img src="./images/scissors.png" alt=""></label>
         </div>
         <div class="flex flex-col content-center items-center flex-2 gap-20">
             <div class="flex gap-20">
-                <div class="card neutral"></div>
-                <div class="card neutral"></div>
+                <div id="one" class="flex content-center items-center card neutral"></div>
+                <div id="two" class="flex content-center items-center card neutral"></div>
             </div>
-            <button class="px-12 py-4 font-10">Shoot!</button>
+            <button class="px-12 py-4 font-10" onclick="findWinner()">Shoot!</button>
+            <p class="font-20 black" id="result"></p>
         </div>
         <div id="right" class="flex-1 flex flex-col content-center items-center gap-20">
-            <div class="card computer"></div>
-            <div class="card computer"></div>
-            <div class="card computer"></div>
+            <div class="flex content-center items-center card computer"><img src="./images/rock.png" alt=""></div>
+            <div class="flex content-center items-center card computer"><img src="./images/paper.png" alt=""></div>
+            <div class="flex content-center items-center card computer"><img src="./images/scissors.png" alt=""></div>
         </div>
     </main>
     <footer class="h-8 flex content-center items-center bg-gray white font-15" id="footer"></footer>
