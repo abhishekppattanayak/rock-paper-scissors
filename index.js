@@ -1,5 +1,6 @@
 document.querySelector('footer').textContent = `© ${new Date().getFullYear()} malginisus`;
 const p = document.getElementById('result');
+let player=0, computer=0;
 function replaceClass() {
     let main = document.getElementById('main');
     let left = document.getElementById('left');
@@ -17,6 +18,11 @@ function replaceClass() {
 }
 window.addEventListener('resize', replaceClass);
 replaceClass();
+
+let updateScore = () => {
+    document.querySelector('span').textContent = `${player} - ${computer}`;
+}
+updateScore();
 
 let findWinner = () => {
     let val = document.querySelector('input[name="choice"]:checked');
@@ -50,6 +56,8 @@ let findWinner = () => {
         }
         else if((val==='rock' && comp==='scissors') || (val==='paper' && comp==='rock') || (val==='scissors' && comp==='paper')){
             p.textContent = "You win!";
+            ++player;
+            updateScore();
             one.classList.add('winner');
             one.classList.remove('neutral');
             two.classList.remove('winner');
@@ -57,6 +65,8 @@ let findWinner = () => {
         }
         else {
             p.textContent = "You lose!";
+            ++computer;
+            updateScore();
             two.classList.add('winner');
             two.classList.remove('neutral');
             one.classList.add('neutral');
